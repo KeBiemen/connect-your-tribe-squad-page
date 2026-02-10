@@ -1,10 +1,29 @@
 {% render 'partials/head.liquid', title: 'Squad page' %}
 
-<h2>Students</h2>
-<ul>
+{% comment %} <ul>
   {% for person in persons %}
     <li><a href="/student/{{ person.id }}">{{ person.name }}</a></li>
   {% endfor %}
-</ul>
+</ul> {% endcomment %}
 
-{% render 'partials/foot.liquid', squads: squads %}
+{% comment %} {% render 'partials/foot.liquid', squads: squads %} {% endcomment %}
+
+  <form>
+    <select>
+      <option value="">sorteer op</option>
+    </select>
+  </form>
+
+  
+    {% for person in persons %}
+
+    <section class="container"> 
+    <h2 class="teamnaam">Team: {{ person.team }}</h2>
+    <img src="https://assets.codepen.io/274456/photo-uenopark.jpg" alt="" /> 
+    <article class="overlay overlaybottom">  
+      <h2 class="text"> {{ person.name }}</h2> 
+      <p class="text"> {{ person.bio }}</p> 
+        </article>
+      </section>
+      
+    {% endfor %}
