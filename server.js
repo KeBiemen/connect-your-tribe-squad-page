@@ -73,7 +73,7 @@ app.get("/", async function (request, response) {
     params["filter[team][_eq]"] = "Dazzle";
   }
    else if (request.query.filter == "Glow") {
-    params["filter[team][_eq]"] = "GLow";
+    params["filter[team][_eq]"] = "Glow";
   }
   else if (request.query.filter == "Harmony") {
     params["filter[team][_eq]"] = "Harmony";
