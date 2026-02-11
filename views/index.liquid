@@ -8,18 +8,30 @@
 
 {% comment %} {% render 'partials/foot.liquid', squads: squads %} {% endcomment %}
 
-  <form>
-    <select>
-      <option value="">sorteer op</option>
-    </select>
-  </form>
+ <form>
+<a href="https://connect-your-tribe-squad-page-fvea.onrender.com/">All</a> 
+<a href="https://connect-your-tribe-squad-page-fvea.onrender.com/?filter=Cheer">cheer</a>
+<a href="https://connect-your-tribe-squad-page-fvea.onrender.com/?filter=Dazzle">Dazzle</a>
+<a href="https://connect-your-tribe-squad-page-fvea.onrender.com/?filter=Glow">Glow</a>
+<a href="https://connect-your-tribe-squad-page-fvea.onrender.com/?filter=Harmony">Harmony</a>
+<a href="https://connect-your-tribe-squad-page-fvea.onrender.com/?filter=Radiant">Radiant</a>
+<a href="https://connect-your-tribe-squad-page-fvea.onrender.com/?filter=Rocket">Rocket</a>
+<a href="https://connect-your-tribe-squad-page-fvea.onrender.com/?filter=Spark">Spark</a>
+<a href="https://connect-your-tribe-squad-page-fvea.onrender.com/?filter=Sunny">Sunny</a>
+ </form>
 
   
     {% for person in persons %}
-
     <section class="container"> 
     <h2 class="teamnaam">Team: {{ person.team }}</h2>
-    <img src="https://assets.codepen.io/274456/photo-uenopark.jpg" alt="" /> 
+    {% if person.mugshot %}
+   
+     <img src="https://fdnd.directus.app/assets/{{ person.mugshot }}?width=500" alt="Profile picture">
+
+    {% else %} 
+      <img src="https://www.shutterstock.com/image-vector/blank-avatar-photo-placeholder-flat-600nw-1151124605.jpg" alt="" /> 
+  {% endif %}
+
     <article class="overlay overlaybottom">  
       <h2 class="text"> {{ person.name }}</h2> 
       <p class="text"> {{ person.bio }}</p> 
